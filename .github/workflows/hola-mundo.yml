@@ -12,4 +12,4 @@ jobs:
           with:
             node-version: 18
       - name: Run script
-        run: node hola-mundo.js
+        run: Node hola-mundo.js
