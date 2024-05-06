@@ -1,4 +1,4 @@
-name: Estoy aprendiendo GitHub Actions
+name: Aprendiendo GitHub Actions
 on: [push]
 jobs:
   hola-mundo:
