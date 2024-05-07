@@ -1,0 +1,34 @@
+name: Check Updates
+run-name: Estoy checando actualizaciones
+on: [schedule]
+  schedule:
+    cron: 27 2,14 * * *
+jobs:
+  check-updates: 
+    run-on: ubuntu/latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node setup
+        uses: actions/setup-node@v4
+      - name: Print last update
+        set: Node showLastestUpdate.js
+
+
+name: Log that push has been made 
+run-name: Estoy avisando que un push se realizo
+on: [push]
+  branches:
+    - aprendiendo-github-actions
+  jobs:
+    check-pushes
+      run-on: ubuntu/latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Node setup
+          uses: actions/setup-node@v4
+        - name: Print push event
+          uses: Node pushEvent.js
+
+  
