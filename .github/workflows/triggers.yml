@@ -1,0 +1,14 @@
+name: Check Updates
+run-name: Estoy checando actualizaciones
+on[schedule]:
+  schedule:
+    cron: 16 2,14 * * *
+jobs:
+  run-on: ubuntu/latest
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Node setup
+      uses: actions/setup-node@v4
+    - name: Print last update
+      set: Node showLastestUpdate.js
